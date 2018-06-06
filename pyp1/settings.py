@@ -73,13 +73,22 @@ WSGI_APPLICATION = 'pyp1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',  # 连接的数据库类型
+        'HOST': '127.0.0.1',  # 连接数据库的地址
+        'PORT': 3310,  # 端口
+        'NAME': "pyp1",  # 数据库名称
+        'USER': 'user1',  # 用户
+        'PASSWORD': '123456'  # 密码
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
