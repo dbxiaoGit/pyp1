@@ -13,7 +13,7 @@ def login(request):
         pwd = request.POST.get("pwd", None)
         print(email, pwd)
         if email == "admin@admin.cn" and pwd == "admin123":
-            return redirect("/userlist/")
+            return redirect("/polls/user_list/")
         else:
             error_msg = "邮箱或密码错误"
     return render(request, "login.html", {"error": error_msg})
@@ -27,5 +27,5 @@ def add_user(request):
     if request.method == "POST":
         new_name = request.POST.get("username", None)
         models.UserInfo.objects.create(name=new_name)
-        return redirect("/user_list/")
+        return redirect("/polls/user_list/")
     return render(request, "add_user.html")
