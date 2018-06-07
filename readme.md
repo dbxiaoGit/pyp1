@@ -1,4 +1,4 @@
-* File->settings->Editor->File and Code Templates->Python Script \<br>
+* File->settings->Editor->File and Code Templates->Python Script <br>
 #!/usr/bin/env python
 #-- coding: utf-8 --
 #@Time : ${DATE} ${TIME}
