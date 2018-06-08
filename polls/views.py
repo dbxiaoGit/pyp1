@@ -20,7 +20,10 @@ def login(request):
 
 def user_list(request):
     ret = models.UserInfo.objects.all()
-    print(ret[0].id, ret[0].name)
+    if ret.exists():
+        print(ret[0].id, ret[0].name)
+    else :
+        return HttpResponse("Hello, user_list is empty")
     return render(request, "user_list.html", {"user_list": ret})
 
 def add_user(request):
